@@ -1,0 +1,29 @@
+body {
+    background-color: #000;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding-block: var(--space-6);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: var(--space-1) var(--space-2);
+    border-radius: 15px;
+}
+
+footer {
+    padding-block: var(--space-3);
+    text-align: center;
+}
