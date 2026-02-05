@@ -49,5 +49,5 @@ export function executarSegundoDesafio() {
   );
 
   let respostas = RESPOSTAS_GOSTA_PROGRAMACAO[gostaLinguagem];
-  alert(respostas[escolherNumeroAleatorio(respostas.length)]);
+  alert(respostas[escolherNumeroAleatorio(respostas.length - 1)]);
 }
