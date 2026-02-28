@@ -82,9 +82,9 @@ O desafio do segundo dia consistiu em criar uma interação simples com o usuár
 ### O que foi feito:
 No segundo dia do desafio, foi implementado um sistema de interação com o usuário, no qual é solicitado seu nome, idade e qual linguagem de programação está estudando. A partir dessas respostas, o programa gera uma mensagem personalizada para o usuário. Além disso, o usuário é questionado se gosta da linguagem de programação que está estudando, e uma resposta aleatória é gerada com base na escolha dele.
 
-Para garantir que o código estivesse mais modular e organizado, utilizei o ES6 para importar e exportar os scripts dos dias 1 e 2, centralizando tudo em um único arquivo chamado `appLogicaJS.js`, que agora é o único arquivo linkado no HTML.
+Para garantir que o código estivesse mais modular e organizado, utilizei o ES6 para importar e exportar os scripts dos dias 1 e 2, centralizando tudo em um único arquivo chamado `app.js`, que agora é o único arquivo linkado no HTML.
 
-As funções de entrada de dados foram organizadas em um script separado chamado `functions.js`, que facilita o gerenciamento dos prompts e a coleta de dados de forma estruturada e reutilizável.
+As funções de entrada de dados foram organizadas em um script separado chamado `prompt-manager.js`, que facilita o gerenciamento dos prompts e a coleta de dados de forma estruturada e reutilizável.
 
 ### 💻 Tecnologias Usadas:
 - **JavaScript (ES6)**: Utilização de módulos ES6 para organizar o código e garantir a modularidade.
@@ -93,12 +93,12 @@ As funções de entrada de dados foram organizadas em um script separado chamado
 ### Partes Importantes da Programação:
 
 1. **Uso de Módulos ES6**:
-   Para modularizar o código e facilitar a manutenção, usei a funcionalidade de módulos do JavaScript. O script `appLogicaJS.js` agora importa as funções dos desafios anteriores e executa os dois desafios de forma organizada.
+   Para modularizar o código e facilitar a manutenção, usei a funcionalidade de módulos do JavaScript. O script `app.js` agora importa as funções dos desafios anteriores e executa os dois desafios de forma organizada.
 
-   **Importação no script `appLogicaJS.js`**:
+   **Importação no script `app.js`**:
     ```js
-    import { executarPrimeiroDesafio } from "./Dia1.js";  
-    import { executarSegundoDesafio } from "./Dia2.js";  
+    import { executarPrimeiroDesafio } from "./dia-1.js";  
+    import { executarSegundoDesafio } from "./dia-2.js";  
 
     executarPrimeiroDesafio();  
     executarSegundoDesafio();
@@ -113,7 +113,7 @@ As funções de entrada de dados foram organizadas em um script separado chamado
         receberString,  
         receberValorPositivo,  
         receberNumeroEspecifico,  
-    } from "../../src/js/functions.js";
+    } from "../../src/js/prompt-manager.js";
     ```
 
 3. **Respostas Aleatórias**:
@@ -164,9 +164,9 @@ As funções de entrada de dados foram organizadas em um script separado chamado
 
 ---
 
-## Próximo Módulo
+<!-- ## Próximo Módulo -->
 
-**(Adicionar informações sobre o próximo módulo, conforme você avançar nos desafios)**
+<!-- **(Adicionar informações sobre o próximo módulo, conforme você avançar nos desafios)** -->
 
 ## 📁 Acesso ao projeto
 

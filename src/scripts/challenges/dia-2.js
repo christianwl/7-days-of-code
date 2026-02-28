@@ -2,7 +2,7 @@ import {
   receberString,
   receberValorPositivo,
   receberNumeroEspecifico,
-} from "../utils/functions.js";
+} from "../utils/prompt-manager.js";
 
 let nomeUsuario = "";
 let idadeUsuario = 0;
