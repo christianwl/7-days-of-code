@@ -1,15 +1,10 @@
 import {
-  receberString,
-  receberValorPositivo,
-  receberNumeroEspecifico,
+  collectString,
+  collectPositiveValue,
+  collectSpecificNumber,
 } from "../utils/prompt-manager.js";
 
-let nomeUsuario = "";
-let idadeUsuario = 0;
-let linguagemProgramacao = "";
-let gostaLinguagem = 0;
-
-const RESPOSTAS_GOSTA_PROGRAMACAO = {
+const LANGUAGE_RESPONSES = {
   1: [
     "Muito bom! Continue estudando e você terá muito sucesso.",
     "Excelente! Persistindo no estudo, você alcançará grandes resultados.",
@@ -26,28 +21,33 @@ const RESPOSTAS_GOSTA_PROGRAMACAO = {
   ],
 };
 
-function escolherNumeroAleatorio(max) {
-  return Math.floor(Math.random() * max) + 1;
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max);
 }
 
-export function executarSegundoDesafio() {
-  nomeUsuario = receberString("Qual é o seu nome?");
-  idadeUsuario = receberValorPositivo("Quantos anos você tem?");
-  linguagemProgramacao = receberString(
-    "Qual linguagem de programação você está estudando?",
-  );
+export function showDay2() {
+  const userData = collectUserData();
 
+  const agePlural = userData.age > 1 ? "s" : "";
   alert(
-    `Ola ${nomeUsuario}, você tem ${idadeUsuario} ano${
-      idadeUsuario > 1 ? "s" : ""
-    } e já está aprendendo ${linguagemProgramacao}`,
+    `Ola ${userData.name}, você tem ${userData.age} ano${agePlural} e já está aprendendo ${userData.programLanguage}`,
   );
 
-  gostaLinguagem = receberNumeroEspecifico(
-    `Você gosta de estudar ${linguagemProgramacao}?\nResponda com o número correspondente:\n\n[ 1 ] Sim\n[ 2 ] Não`,
+  const userChoice = collectSpecificNumber(
+    `Você gosta de estudar ${userData.programLanguage}?\nResponda com o número correspondente:\n\n[ 1 ] Sim\n[ 2 ] Não`,
     [1, 2],
   );
 
-  let respostas = RESPOSTAS_GOSTA_PROGRAMACAO[gostaLinguagem];
-  alert(respostas[escolherNumeroAleatorio(respostas.length - 1)]);
+  let responses = LANGUAGE_RESPONSES[userChoice];
+  alert(responses[getRandomNumber(responses.length)]);
+}
+
+function collectUserData() {
+  const userName = collectString("Qual é o seu nome?");
+  const userAge = collectPositiveValue("Quantos anos você tem?");
+  const userProgramLanguage = collectString(
+    "Qual linguagem de programação você está estudando?",
+  );
+
+  return { name: userName, age: userAge, programLanguage: userProgramLanguage };
 }
